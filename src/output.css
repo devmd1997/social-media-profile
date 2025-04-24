@@ -1,4 +1,5 @@
 /*! tailwindcss v4.1.4 | MIT License | https://tailwindcss.com */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -7,8 +8,15 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-white: hsl(0, 0%, 100%);
+    --spacing: 0.25rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --color-green: hsl(75, 94%, 57%);
+    --color-grey-700: hsl(0, 0%, 20%);
+    --color-grey-800: hsl(0, 0%, 12%);
+    --color-grey-900: hsl(0, 0%, 8%);
+    --font-inter: "Inter", sans-serif;
   }
 }
 @layer base {
@@ -163,12 +171,100 @@
   .contents {
     display: contents;
   }
+  .flex {
+    display: flex;
+  }
   .table {
     display: table;
+  }
+  .h-screen {
+    height: 100vh;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-8 {
+    gap: calc(var(--spacing) * 8);
   }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+}
+@layer base {
+  h1 {
+    font-size: xx-large;
+    font-weight: 400;
+    line-height: 15%;
+    color: var(--color-white);
+    font-family: var(--font-inter);
+  }
+  h2 {
+    font-size: medium;
+    font-weight: 600;
+    line-height: 15%;
+    color: var(--color-green);
+    font-family: var(--font-inter);
+  }
+  p {
+    font-size: small;
+    font-weight: 300;
+    line-height: 15%;
+    color: var(--color-white);
+    font-family: var(--font-inter);
+  }
+  body {
+    background-color: var(--color-grey-900);
+  }
+}
+@layer components {
+  .card {
+    background-color: var(--color-grey-800);
+    padding: 40px;
+    flex-direction: column;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+  }
+  .profile-title-content {
+    flex-direction: column;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-link-content {
+    flex-direction: column;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .card-link-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-grey-700);
+    border-radius: 10px;
+    padding-block: 12px;
+    width: 320px;
+    font-size: medium;
+    font-weight: 600;
+    color: var(--color-white);
+    font-family: var(--font-inter);
+  }
+  .card-link-box:hover {
+    background-color: var(--color-green);
+    color: var(--color-grey-900);
+    box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.1);
+  }
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
   }
 }
 @property --tw-outline-style {
